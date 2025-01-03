@@ -99,17 +99,16 @@ return `${score}文字打てました!\n${text}\n [OK] リトライ / [キャン
 const gameOver = id => {
     wrap.textContent = "タイムアップ！";
 
-    setTimeout(() => {
-
     clearInterval(id);
 
+    setTimeout(() => {
     const result = confirm(rankCheck(score));
+}, 10);
 
     // OKボタンをクリックされたらリロードする
     if(result == true) {
         window.location.reload();
     }
-}, 10);
 };
 
 // カウントダウンタイマー
